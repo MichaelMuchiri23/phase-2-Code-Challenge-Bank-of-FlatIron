@@ -5,9 +5,34 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: aquamarine;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.title {
+  text-align: center;
+  color: black;
+}
+
+.nice, th {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid;
+}
+
+tr:hover {
+  background-color: coral;
+}
+
+
+.div {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+}
+
+.but-ton {
+  padding: auto;
 }
