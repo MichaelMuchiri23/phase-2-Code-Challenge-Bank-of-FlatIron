@@ -36,3 +36,9 @@ tr:hover {
 .but-ton {
   padding: auto;
 }
+
+.search {
+  position: relative;
+  left: 600px;
+  bottom: 10px;
+}

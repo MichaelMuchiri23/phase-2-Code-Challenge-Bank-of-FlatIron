@@ -1,19 +1,12 @@
-import React, {useEffect, useState} from "react";
+import React,{useState} from "react";
 
-function Table(){
-    const [table, setTable] = useState([])
-    
-    useEffect(() => {
-        fetch("http://localhost:3000/transactions")
-        .then((res) => res.json())
-        .then((data) => {
-            setTable(data)
-            console.log(data)
+function Table({table}){
+    const[locate, setLocate]=useState("")
 
-        })
-    }, [])
-
-    const tableList = table.map((obj) => {
+    const tableList = table.filter((item)=>{
+        return locate.toLowerCase() === ""?
+        item:item.description.toLowerCase().includes(locate)
+    }).map((obj) => {
         return(
             <tr key={obj.id}>
                 <th>{obj.id}</th>
@@ -25,6 +18,10 @@ function Table(){
         )
     })
     return(
+      <>
+        <form className="search">
+          <input type="search" placeholder="search" onChange={(e)=>setLocate(e.target.value)}/>
+        </form>
         <table className="nice">
             <tr>
                 <th>id</th>
@@ -35,6 +32,7 @@ function Table(){
             </tr>
             {tableList}
         </table>
+      </>
     )
 }
 
